@@ -1,0 +1,77 @@
+msgid "Toman"
+msgstr "تومان"
+
+msgid "Currency"
+msgstr "واحد پول"
+
+msgid "Payment Log"
+msgstr "گزارش لاگ پرداخت ها"
+
+msgid "IDPay Transactions"
+msgstr "تراکنش های آیدی پی"
+
+msgid "Transactions List"
+msgstr "لیست تراکنش‌ها"
+
+msgid "IDPay payment"
+msgstr "پرداخت آیدی پی"
+
+msgid "Sandbox"
+msgstr "حالت آزمایشگاه"
+
+msgid "You can create an API Key by going to your <a href=\"https://idpay.ir/dashboard/web-services\">web service</a>."
+msgstr "با رفتن به <a href=\"https://idpay.ir/dashboard/web-services\">وب سرویس</a> تان، می‌توانید یک API Key ایجاد کنید."
+
+msgid "API KEY"
+msgstr "API KEY"
+
+msgid "Your payment has been successfully completed. Tracking code: {track_id}"
+msgstr "پرداخت شما با موفقیت انجام شد. کد رهگیری: {track_id}"
+
+msgid "failed"
+msgstr "ناموفق"
+
+msgid "completed"
+msgstr "کامل شده"
+
+msgid "There are not any transactions."
+msgstr "هیچ تراکنشی وجود ندارد."
+
+msgid "Payment Status"
+msgstr "وضعیت پرداخت"
+
+msgid "Tracking Code"
+msgstr "کد رهگیری"
+
+msgid "Transaction ID"
+msgstr "شناسه تراکنش"
+
+msgid "Amount"
+msgstr "مبلغ"
+
+msgid "Email"
+msgstr "ایمیل"
+
+msgid "Date"
+msgstr "تاریخ"
+
+msgid "Form Name"
+msgstr "نام فرم"
+
+msgid "You do not have sufficient permissions to access this page."
+msgstr "شما مجوز کافی برای دسترسی به این صفحه را ندارید."
+
+msgid "Description"
+msgstr "توضیحات"
+
+msgid "Field"
+msgstr "فیلد"
+
+msgid "Rial"
+msgstr "ریال"
+
+msgid "https://idpay.ir/"
+msgstr "https://idpay.ir/"
+
+msgid "IDPay"
+msgstr "آیدی پی"
