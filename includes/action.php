@@ -85,7 +85,7 @@ class IDPay_Action_After_Submit extends \ElementorPro\Modules\Forms\Classes\Acti
             'created_at' => time(),
             'status' => 'pending',
             'log' => '',
-            'return_url' => $_REQUEST['referrer'],
+            'return_url' => sanitize_text_field($_REQUEST['referrer']),
         ];
         $row_format = [
             '%d',
