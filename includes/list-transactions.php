@@ -9,7 +9,7 @@ if ( ! current_user_can( "manage_options" ) ) {
 }
 
 global $wpdb;
-$pagenum    = isset( $_GET['pagenum'] ) ? absint( $_GET['pagenum'] ) : 1;
+$pagenum    = isset( $_GET['pagenum'] ) ? absint( sanitize_text_field($_GET['pagenum']) ) : 1;
 $limit      = 10;
 $offset     = ( $pagenum - 1 ) * $limit;
 $table_name = $wpdb->prefix . IDPay_Elementor_Extension::IDPAY_TABLE_NAME;

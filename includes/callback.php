@@ -12,7 +12,7 @@ class IDPay_Payment_Callback {
     public function process() {
         global $wpdb;
 
-        $params    = $_SERVER['REQUEST_METHOD'] == 'POST' ? $_POST : $_GET;
+        $params    = sanitize_text_field($_SERVER['REQUEST_METHOD']) == 'POST' ? $_POST : $_GET;
         $status    = !empty( $params['status'] )   ? sanitize_text_field( $params['status'] )   : '';
         $track_id  = !empty( $params['track_id'] ) ? sanitize_text_field( $params['track_id'] ) : '';
         $id        = !empty( $params['id'] )       ? sanitize_text_field( $params['id'] )       : '';
