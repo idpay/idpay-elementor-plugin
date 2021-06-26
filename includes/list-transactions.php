@@ -64,15 +64,15 @@ $currency = get_option( 'elementor_idpay_currency' );
 						<?php echo date( "Y-m-d H:i:s", $transaction['created_at'] ); ?>
                     </td>
 
-                    <td> <?php echo $transaction['email'] ?></td>
+                    <td> <?php echo esc_html($transaction['email']) ?></td>
                     <td>
                         <?php
-                        echo ($currency == 'rial' ? $transaction['amount'] : $transaction['amount'] / 10) . " ";
+                        echo ($currency == 'rial' ? esc_html($transaction['amount']) : esc_html($transaction['amount'] / 10)) . " ";
                         _e( $currency == 'rial' ? 'Rial' : 'Toman', 'idpay-elementor' );
                         ?>
                     </td>
-                    <td> <?php echo $transaction['trans_id'] ?></td>
-                    <td> <?php echo $transaction['track_id'] ?></td>
+                    <td> <?php echo esc_html($transaction['trans_id']) ?></td>
+                    <td> <?php echo esc_html($transaction['track_id']) ?></td>
                     <td>
 						<?php if ( $transaction['status'] == "completed" ): ?>
                             <b style="color: #388e3c"><?php _e( 'completed', 'idpay-elementor' ) ?></b>
@@ -82,7 +82,7 @@ $currency = get_option( 'elementor_idpay_currency' );
                             <b style="color: #ff8f00"><?php _e( 'pending payment', 'idpay-elementor' ) ?></b>
 						<?php endif; ?>
                     </td>
-                    <td> <?php echo $transaction['log'] ?></td>
+                    <td> <?php echo esc_html($transaction['log']) ?></td>
                 </tr>
 			<?php
 			endforeach;
