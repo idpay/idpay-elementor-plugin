@@ -103,13 +103,13 @@ $currency = get_option( 'elementor_idpay_currency' );
 
 	if ( $page_links ):
 		?>
-        <center>
+        <div style="text-align: center;">
             <div class="tablenav">
                 <div class="tablenav-pages" style="float:none; margin: 1em 0">
-					<?php echo $page_links ?>
+					<?php echo $page_links; ?>
                 </div>
             </div>
-        </center>
+        </div>
 	<?php endif; ?>
     <br>
     <hr>

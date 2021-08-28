@@ -12,11 +12,11 @@ class IDPay_Payment_Callback {
     public function process() {
         global $wpdb;
 
-        $params    = sanitize_text_field($_SERVER['REQUEST_METHOD']) == 'POST' ? $_POST : $_GET;
-        $status    = !empty( $params['status'] )   ? sanitize_text_field( $params['status'] )   : '';
-        $track_id  = !empty( $params['track_id'] ) ? sanitize_text_field( $params['track_id'] ) : '';
-        $id        = !empty( $params['id'] )       ? sanitize_text_field( $params['id'] )       : '';
-        $order_id  = !empty( $params['order_id'] ) ? sanitize_text_field( $params['order_id'] ) : '';
+        $params    = $this->recursive_sanitize_text_field($_SERVER['REQUEST_METHOD'] == 'POST' ? $_POST : $_GET);
+        $status    = sanitize_text_field( $_REQUEST['status'] );
+        $track_id  = sanitize_text_field( $_REQUEST['track_id'] );
+        $id        = sanitize_text_field( $_REQUEST['id'] );
+        $order_id  = sanitize_text_field( $_REQUEST['order_id'] );
 
         if ( empty( $id ) || empty( $order_id ) ) {
             return;
@@ -180,5 +180,25 @@ class IDPay_Payment_Callback {
      */
     private function get_global_setting( $name ) {
         return get_option( 'elementor_' . $name );
+    }
+
+    /**
+     * Recursive sanitation for an array
+     *
+     * @param $array
+     *
+     * @return mixed
+     */
+    private function recursive_sanitize_text_field($array) {
+        foreach ( $array as $key => &$value ) {
+            if ( is_array( $value ) ) {
+                $value = $this->recursive_sanitize_text_field($value);
+            }
+            else {
+                $value = sanitize_text_field( $value );
+            }
+        }
+
+        return $array;
     }
 }
