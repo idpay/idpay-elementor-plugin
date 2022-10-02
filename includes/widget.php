@@ -78,7 +78,7 @@ class Elementor_IDPay_Widget extends \Elementor\Widget_Base {
             $color = sanitize_text_field($_GET['idpay_status']) == 'failed' ? '#f44336' : '#8BC34A';
 
             echo sprintf( '<div class="idpay-elementor-widget %s">', esc_html($classes) );
-            echo sprintf( '<b style="color:%s; text-align:center; display: block;">%s</b>', $color, esc_html( $_GET['idpay_message'] ) );
+            echo sprintf( '<b style="color:%s; text-align:center; display: block;">%s</b>', esc_attr($color), esc_attr( $_GET['idpay_message'] ) );
             echo '</div>';
         }
 
